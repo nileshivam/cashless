@@ -9,15 +9,10 @@
 </head>
 <body>
     @include('includes.header')
-
-
-<div class="wrapper">
-    @yield('content')
-</div>
-
-@include('includes.footer')
-
-@include('includes.scripts')
-
+    <div class="body">
+        @yield('content')
+    </div>
+    @include('includes.footer')
+    @include('includes.scripts')
 </body>
 </html>
