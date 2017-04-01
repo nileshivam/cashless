@@ -14,7 +14,7 @@ class CreateTranTypesTable extends Migration
     public function up()
     {
         Schema::create('tran_types', function (Blueprint $table) {
-    
+
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
