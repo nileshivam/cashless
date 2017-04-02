@@ -82,13 +82,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m4 l4">
-                        <ul id="chat-out" class="side-nav rightside-navigation right-0 right-aligned ps-container" style="right: -250px; height: 674px;">                            <li class="li-hover">
+                    <div class="col s12 m9 l9">
+                        <ul id="chat-out" class="side-nav rightside-navigation right-0">
+                            <li class="li-hover">
                                 <ul class="chat-collapsible" data-collapsible="expandable">
                                     <li>
-                                        <div class="collapsible-header light-blue white-text active">
-                                            <i class="mdi-action-account-circle"></i>Customer Details
-                                        </div>
+                                        <div class="collapsible-header light-blue white-text active"><i class="mdi-action-account-circle"></i>Customer Details</div>
                                         <div class="collapsible-body sales-repoart">
                                             <div class="sales-repoart-list  chat-out-list row">
                                                 <div class="col s3" style="text-transform:uppercase;font-weight:bold;">RFID</div>
