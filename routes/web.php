@@ -11,11 +11,44 @@
 |
 */
 
-Route::get('/', function () {
-    return view('users.login');
+Route::get('/home', function () {
+    echo "Welcome";
 });
 
-//Auth::routes();
 
-//Route::get('/home', 'HomeController@index');
+
+Route::group(['middleware' => 'rolecheck:0'],function(){
+	///Super Admin Routes
+	Route::resource('orgs', 'MakeOrgController');
+});
+
+
+Route::group(['middleware' => 'role:1'],function(){
+	///ORG Routes
+	
+
+
+});
+
+
+
+
+Route::group(['middleware' => 'role:2'],function(){
+	///Vendor Routes
+	
+
+
+});
+
+
+
+Route::group(['middleware' => 'role:3'],function(){
+	///User Routes
+	
+
+
+});
+
+
+Auth::routes();
 

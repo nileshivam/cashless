@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Buyer extends Model
+class Vendor extends Model
 {
     //
-    protected $table='buyers';
-<<<<<<< HEAD
+    protected $table='vendors';
 
     public function org()
     {
@@ -20,10 +19,13 @@ class Buyer extends Model
     	return $this->hasOne('App\Models\User','id');
     }
 
+    public function items()
+    {
+    	return $this->hasMany('App\Models\Item','vendor_id');
+    }
+
     public function trans()
     {
-    	return $this->hasMany('App\Models\Tran','user1');
+    	return $this->hasMany('App\Models\Tran','user2');
     }
-=======
->>>>>>> origin/master
 }

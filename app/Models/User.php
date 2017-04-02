@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
@@ -28,4 +29,34 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    protected $dates = ['deleted_at'];
+
+
+    public function role()
+    {
+        return $this->belongsTo('App\Role','role_id');
+    }
+
+    public function superadmin()
+    {
+        return $this->hasOne('App\User','id');
+    }
+
+    public function org()
+    {
+        return $this->hasOne('App\User','id');
+    }
+
+    public function vendor()
+    {
+        return $this->hasOne('App\User','id');
+    }
+
+
+    public function buyer()
+    {
+        return $this->hasOne('App\User','id');
+    }
 }
