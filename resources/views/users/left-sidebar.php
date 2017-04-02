@@ -23,26 +23,20 @@
                 </div>
             </div>
         </li>
-        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
+        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Home</a>
         </li>
 
-        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-add-shopping-cart"></i> Add Product</a>
+        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-add-shopping-cart"></i> Recharge</a>
         </li>
 
-        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-add-shopping-cart"></i> Edit Product</a>
+        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-add-shopping-cart"></i> History</a>
         </li>
 
-        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> History</a>
+        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Account Settings</a>
         </li>
 
-        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Account Setting</a>
+        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Block/Unblock Card</a>
         </li>
 
-
-        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Add Category</a>
-        </li>
-
-
-        <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Edit Category</a>
-        </li></ul>
+       </ul>
     <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2"><i class="mdi-navigation-menu" ></i></a>
