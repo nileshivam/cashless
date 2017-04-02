@@ -12,7 +12,7 @@
 */
 
 Route::get('/home', function () {
-    echo "Welcome";
+    return view('vendors.home');
 });
 
 

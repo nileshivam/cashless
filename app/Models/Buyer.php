@@ -8,11 +8,10 @@ class Buyer extends Model
 {
     //
     protected $table='buyers';
-<<<<<<< HEAD
 
     public function org()
     {
-    	return $this->belongsTo('App\Models\Org','org_id')
+    	return $this->belongsTo('App\Models\Org','org_id');
     }
 
     public function user()
@@ -24,6 +23,4 @@ class Buyer extends Model
     {
     	return $this->hasMany('App\Models\Tran','user1');
     }
-=======
->>>>>>> origin/master
 }

@@ -2,24 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Org;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 
-class MakeOrgController extends Controller
+class MakeVendorController extends Controller
 {
-
     public function entry(User $user)
     {
         $user->email        =   Input::get('email');
         $user->mobile       =   Input::get('mobile');
         $user->name         =   Input::get('name');
         $user->save();
-        $org                =   Org::firstOrNew(['id'=>$user->id]);
-        $org->address       =   Input::get('address');
-        $org->save();
+        $vendor             =   Vendor::firstOrNew(['id'=>$user->id]);
+        $vendor->org_id     =   Auth::user()->id;
         return $user;
     }
-
 
 
     /**
@@ -29,10 +26,9 @@ class MakeOrgController extends Controller
      */
     public function index()
     {
-        //R
-        $orgs=Org::all();
-        var_dump($orgs);
-        //return view('pages.org.list');
+        $vendors=Vendor::all();
+        var_dump($vendors);
+        //return view('pages.vendor.list');
     }
 
     /**
@@ -42,7 +38,8 @@ class MakeOrgController extends Controller
      */
     public function create()
     {
-        return view('pages.org.create');
+        //
+         return view('pages.vendor.create');
     }
 
     /**
@@ -51,71 +48,66 @@ class MakeOrgController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreOrg $request)
+    public function store(StoreVendor $request)
     {
-        //
         $user               =   new User();
-        $user->role_id      =   1;
+        $user->role_id      =   2;
         $user->password     =   str_random(8); 
         $user=entry($user);
 
         //Mail HERE
-        Mail::to(Input::get('email'))->queue(new WelcomeOrg(Input::get('name'),$user->password));
+        Mail::to(Input::get('email'))->queue(new WelcomeVendor(Input::get('name'),$user->password));
 
-        return redirect()->route('org.show', ['org' => $user->id])->with('status', 'Successfully Created');
-
-        
+        return redirect()->route('vendor.show', ['vendor' => $user->id])->with('status', 'Successfully Created');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Org  $org
+     * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function show(Org $org)
+    public function show(Vendor $vendor)
     {
         //
-        return view('pages.org.show');
+        return view('pages.vendor.show');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Org  $org
+     * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Org $org)
+    public function edit(Vendor $vendor)
     {
         //
-        return view('pages.org.create')->with(['org'=>$org]);
+        return view('pages.vendor.create')->with(['vendor'=>$vendor]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Org  $org
+     * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreOrg $request, Org $org)
+    public function update(StoreVendor $request, Vendor $vendor)
     {
-        //
-        $user=$org->user();
+        $user=$vendor->user();
         $user=entry($user);
-        return redirect()->route('org.show', ['org' => $user->id])->with('status', 'Successfully Updated');
+        return redirect()->route('vendor.show', ['vendor' => $user->id])->with('status', 'Successfully Updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Org  $org
+     * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Org $org)
+    public function destroy(Vendor $vendor)
     {
-        //
-        $org->delete();
-        return redirect()->route('org.index')->with('status', 'Successfully Deleted');
+        $vendor->delete();
+        return redirect()->route('vendor.index')->with('status', 'Successfully Deleted');
     }
 }

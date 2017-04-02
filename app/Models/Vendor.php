@@ -11,7 +11,7 @@ class Vendor extends Model
 
     public function org()
     {
-    	return $this->belongsTo('App\Models\Org','org_id')
+    	return $this->belongsTo('App\Models\Org','org_id');
     }
 
     public function user()

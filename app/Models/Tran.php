@@ -8,7 +8,6 @@ class Tran extends Model
 {
     //
     protected $table='trans';
-<<<<<<< HEAD
 
     public function buyer()
     {
@@ -29,6 +28,4 @@ class Tran extends Model
     {
     	return $this->belongsTo('App\Models\TranType','type');
     }
-=======
->>>>>>> origin/master
 }

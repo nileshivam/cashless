@@ -30,6 +30,6 @@
 @endsection
 
 @section('right-content')
-    @include('vendors.shop')
+    @include('vendors.tableview')
 @endsection
 

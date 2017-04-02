@@ -11,7 +11,7 @@ class Item extends Model
 
     public function vendor()
     {
-    	return $this->belongsTo('App\Models\Vendor','vendor_id')
+    	return $this->belongsTo('App\Models\Vendor','vendor_id');
     }
 
     public function tranitems()
