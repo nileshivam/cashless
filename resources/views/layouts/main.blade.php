@@ -17,7 +17,6 @@
         <aside id="left-sidebar-nav">
             @yield('left-content')
         </aside>
-
         @yield('right-content')
         <aside id="right-sidebar-nav">
         </aside>

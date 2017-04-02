@@ -5,8 +5,6 @@
         .right-0 {
             right:0 !important;
             height:100% !important;
-
-
             padding:0;
         }
         ul.category_button{

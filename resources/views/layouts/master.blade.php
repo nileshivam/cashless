@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     @yield('meta')
-    @yield('styles')
     @include('includes.head')
+    @yield('styles')
 </head>
 <body>
     @include('includes.header')
     <div id="main">
-        @yield('content')
+        <div class="wrapper">
+            @yield('content')
+        </div>
     </div>
     @include('includes.scripts')
     @yield('scripts')
